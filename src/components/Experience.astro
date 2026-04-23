@@ -1,0 +1,31 @@
+---
+const experiences = [
+	{
+		role: "(Senior Frontend Engineer)",
+		company: "Tech Corp",
+		period: "2021 - ปัจจุบัน",
+		description: "เป็นผู้นำทีมฟรอนต์เอนด์ในการย้ายสถาปัตยกรรมแบบดั้งเดิม (Monolithic) ไปสู่ระบบ Micro-frontends ซึ่งช่วยเพิ่มประสิทธิภาพการทำงานของแอปพลิเคชันได้ถึง 40%"
+	},
+	{
+		role: "(Software Developer)",
+		company: "Web Solutions Inc.",
+		period: "2018 - 2021",
+		description: "พัฒนาและดูแลรักษาระบบเว็บแอปพลิเคชันสำหรับลูกค้าหลากหลายโครงการ โดยใช้งาน React และ Node.js เป็นหลัก"
+	}
+];
+---
+<section class="opacity-0 animate-fade-up [animation-delay:200ms]">
+	<h2>ประสบการณ์การทำงาน</h2>
+	<div class="flex flex-col gap-6">
+		{experiences.map(job => (
+			<div class="glass-card">
+				<div class="flex justify-between items-baseline mb-1">
+					<h3 class="text-xl font-bold text-slate-800 m-0">{job.role}</h3>
+					<span class="text-sky-600 text-sm font-semibold">{job.period}</span>
+				</div>
+				<h4 class="text-slate-500 font-medium text-base m-0 mb-4">{job.company}</h4>
+				<p class="text-slate-600 m-0 leading-relaxed">{job.description}</p>
+			</div>
+		))}
+	</div>
+</section>

@@ -1,0 +1,81 @@
+---
+const skills = [
+	{ 
+		name: "JavaScript / TypeScript", 
+		label: "ดีมาก", 
+		color: "text-emerald-700 bg-emerald-50 border-emerald-200",
+		icons: [
+			"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+			"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+		]
+	},
+	{ 
+		name: "React / Next.js", 
+		label: "ดีมาก", 
+		color: "text-emerald-700 bg-emerald-50 border-emerald-200",
+		icons: [
+			"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+			"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+		]
+	},
+	{ 
+		name: "Node.js / Express", 
+		label: "ปานกลาง", 
+		color: "text-sky-700 bg-sky-50 border-sky-200",
+		icons: [
+			"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+			"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"
+		]
+	},
+	{ 
+		name: "HTML / CSS / Tailwind", 
+		label: "ดีมาก", 
+		color: "text-emerald-700 bg-emerald-50 border-emerald-200",
+		icons: [
+			"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+			"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+			"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+		]
+	},
+	{ 
+		name: "Astro", 
+		label: "ปานกลาง", 
+		color: "text-sky-700 bg-sky-50 border-sky-200",
+		icons: [
+			"https://cdn.simpleicons.org/astro/FF7E33"
+		]
+	},
+	{ 
+		name: "Git / Docker / AWS", 
+		label: "ปานกลาง", 
+		color: "text-sky-700 bg-sky-50 border-sky-200",
+		icons: [
+			"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+			"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+			"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+		]
+	},
+];
+---
+<section class="opacity-0 animate-fade-up [animation-delay:400ms]">
+	<h2>ทักษะความสามารถ</h2>
+	<div class="glass-card mt-4">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+			{skills.map(skill => (
+				<div class="flex items-center justify-between p-3 rounded-xl hover:bg-white/80 transition-colors border border-transparent hover:border-slate-200/60 hover:shadow-sm group">
+					<div class="flex items-center gap-3">
+						<div class="flex items-center gap-1.5 p-1.5 bg-slate-50/80 rounded-lg group-hover:bg-slate-100/80 transition-colors">
+							{skill.icons.map(iconUrl => (
+								<img src={iconUrl} alt="Tech Icon" class="w-5 h-5 object-contain hover:scale-110 transition-transform" />
+							))}
+						</div>
+						<span class="font-medium text-slate-700 group-hover:text-sky-600 transition-colors text-sm md:text-base">{skill.name}</span>
+					</div>
+					<span class={`text-xs font-bold px-3 py-1 rounded-full border whitespace-nowrap ${skill.color}`}>
+						{skill.label}
+					</span>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
